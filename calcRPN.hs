@@ -50,6 +50,7 @@ allOP = replicateM ((length ns)-1) ops
 allNum = replicateM 4 . map (show) $ ns
 
 allRPN = [combinePrecedence n p | n <- allNum, p <- allOP]
+allRPNs = map (intercalate " ") . join $ allRPN 
 {-allRPNs = map (intersperse ' ') . concat $ allRPN-}
 
 -- All possible precedence rules for 4 numbers and 3 operations, manually listed out
